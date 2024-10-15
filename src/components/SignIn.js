@@ -21,6 +21,7 @@ function SignIn() {
 
       if (response.data.success === true) {
         localStorage.setItem("token", response.data.user.token);
+        localStorage.setItem("userData", JSON.stringify(response.data.user));
         setIsLoggedIn(true); // Set login status
       } else {
         setError("Login failed. Please check your credentials.");
