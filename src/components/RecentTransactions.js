@@ -2,10 +2,22 @@ import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 
 function RecentTransactions (){
+
+    // Retrieve user data from local storage
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+     // Extract data needed, or set default values if they don't exist
+  const firstName = userData ? userData.user.firstname : "User"; // Change "firstName" to the correct key
+  const lastName = userData ? userData.user.lastName : "lastName"; // Change "lastName" to the correct key
+
+
+    console.log("User Data", userData.user);
+
     return (
+
         <Card className="mb-4">
         <Card.Body>
-          <h2>Hey Jordan 👋</h2>
+          <h2>Hey  {firstName} 👋</h2>
           <p>Here are your recent transactions:</p>
           <ListGroup variant="flush">
             <ListGroup.Item className="d-flex justify-content-between align-items-center">
