@@ -14,6 +14,10 @@ function Dashboard() {
 
   const token = localStorage.getItem("token");
 
+
+    // Retrieve user data from local storage
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
   useInactivityLogout();
 
   console.log("Token: ", token);
